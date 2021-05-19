@@ -2,7 +2,7 @@
 ## Please do the below steps 
 - Clone the repo
 ```Shell
-git clone https://github.com/kashyapmanu/tcsgui.git
+$ git clone https://github.com/kashyapmanu/tcsgui.git
 ```
 - Creating Virtual Environment
 ```Shell
@@ -11,11 +11,11 @@ $ source venv/bin/activate
 ```
 - Installing requirements
 ```Shell
-pip3 install -r requirements.txt
+$ pip3 install -r requirements.txt
 ```
 - Running app
 ```Shell
-python3 app.py
+$ python3 app.py
 ```
 
 ## Please Note
