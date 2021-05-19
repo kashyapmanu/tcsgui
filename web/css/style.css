@@ -1,0 +1,30 @@
+.brandname{
+    width: fit-content;
+    font-size: larger;
+    color: azure;
+}
+
+.navbar{
+    background-color: rgba(158, 161, 247, 0.646);
+    justify-content: center;
+    text-align: center;
+}
+
+.card mb-3{
+    border-width: 10px;
+    border-style: double;
+}
+
+body{
+    background-color: cornflowerblue;
+}
+
+.nav-item{
+    font-size: 50px;
+    color: aliceblue;
+}
+
+.btn-success{
+    height: 100px;
+    width: 250px;
+}
