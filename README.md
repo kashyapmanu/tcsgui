@@ -2,7 +2,7 @@
 ## Please do the below steps 
 - Clone the repo
 ```Shell
-gh repo clone kashyapmanu/tcsgui
+git clone https://github.com/kashyapmanu/tcsgui.git
 ```
 - Creating Virtual Environment
 ```Shell
