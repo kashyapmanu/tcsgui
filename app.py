@@ -30,6 +30,12 @@ eel.init('web')
 @eel.expose
 def run_tsc():
 
+    WindowName="Main View"
+    view_window = cv2.namedWindow(WindowName,cv2.WINDOW_NORMAL)
+
+    # These two lines will force the window to be on top with focus.
+    cv2.setWindowProperty(WindowName,cv2.WND_PROP_FULLSCREEN,cv2.WINDOW_FULLSCREEN)
+    cv2.setWindowProperty(WindowName,cv2.WND_PROP_FULLSCREEN,cv2.WINDOW_NORMAL)
    
     #############################################
 
@@ -168,7 +174,9 @@ def run_tsc():
         print(img)
         img = cv2.resize(img, (32, 32))
         img = preprocessing(img)
+        
         cv2.imshow("Processed Image", img)
+        
         img = img.reshape(1, 32, 32, 1)
         cv2.putText(imgOrignal, "CLASS: ", (20, 35), font,
                     0.75, (0, 0, 255), 2, cv2.LINE_AA)
@@ -189,6 +197,7 @@ def run_tsc():
         if(key % 256 == 27):
             break
     cap.release()
+    
     cv2.destroyAllWindows()
 
 
