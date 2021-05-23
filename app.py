@@ -16,6 +16,7 @@ import eel
 import random
 import os
 import tensorflow.compat.v1 as tf
+from datetime import datetime
 tf.disable_v2_behavior()
 
 #import keras
@@ -29,6 +30,8 @@ eel.init('web')
 
 @eel.expose
 def run_tsc():
+    f = open("tsc_log.txt", "w")
+    counter = 1
 
     WindowName="Main View"
     view_window = cv2.namedWindow(WindowName,cv2.WINDOW_NORMAL)
@@ -188,16 +191,24 @@ def run_tsc():
         probabilityValue = np.amax(predictions)
         if probabilityValue > threshold:
             # print(getCalssName(classIndex))
+            now = datetime.now()
+            current_time = now.strftime("%H:%M:%S")
             cv2.putText(imgOrignal, str(classIndex)+" "+str(getCalssName(classIndex)),
                         (120, 35), font, 0.75, (0, 0, 255), 2, cv2.LINE_AA)
             cv2.putText(imgOrignal, str(round(probabilityValue*100, 2))+"%",
                         (180, 75), font, 0.75, (0, 0, 255), 2, cv2.LINE_AA)
             cv2.imshow("Result", imgOrignal)
+            string_1 = "No: " + str(counter)  + " Time: " + current_time + "\n"
+            f.write(string_1)
+            count = counter + 1
+            string_2 = str(classIndex) + " " + str(getCalssName(classIndex)) + " " + str(round(probabilityValue*100, 2)) + "%\n"
+            f.write(string_2)
+            f.write("-----------------------------------------------------\n")
         key = cv2.waitKey(1)
         if(key % 256 == 27):
             break
     cap.release()
-    
+    f.close()
     cv2.destroyAllWindows()
 
 
