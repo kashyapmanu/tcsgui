@@ -200,7 +200,7 @@ def run_tsc():
             cv2.imshow("Result", imgOrignal)
             string_1 = "No: " + str(counter)  + " Time: " + current_time + "\n"
             f.write(string_1)
-            count = counter + 1
+            counter = counter + 1
             string_2 = str(classIndex) + " " + str(getCalssName(classIndex)) + " " + str(round(probabilityValue*100, 2)) + "%\n"
             f.write(string_2)
             f.write("-----------------------------------------------------\n")
